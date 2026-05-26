@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #101820, #1d3557, #243b55);
+  overflow-x: hidden; /* Permite scroll vertical se necessário, mas evita quebra horizontal */
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 40px;
+  color: #f8c8dc;
+  padding: 0 10px;
+}
+
+.items {
+  position: relative;
+  max-width: 1000px;
+  width: 100%; /* Garante que se adapte a telas menores */
+  height: 700px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Um efeitozinho de sombra fica lindo aqui */
+}
+
+/* O CHÃO DE GRAMA */
+.items::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  background: #2e7d32;
+  z-index: 1;
+}
+
+.videoImagem {
+  width: 220px;
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.videoImagem:hover {
+  transform: scale(1.05);
+}
+
+.carta {
+  width: 250px;
+  position: absolute;
+  top: 190px;
+  left: 520px;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carta:hover {
+  transform: scale(1.05);
+}
+
+/* AJUSTADO: Subi um pouco os gatinhos para ficarem "atrás" ou "em cima" da grama corretamente */
+.gatinhos {
+  width: 220px;
+  position: absolute;
+  bottom: 120px; /* Teste aumentar se achar que eles sumiram muito na grama */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4; /* Fica acima da grama (z-index 1) */
+}
+
+.abelha {
+  width: 120px;
+  position: absolute;
+  bottom: 170px;
+  right: 40px;
+  z-index: 4;
+}
+
+/* AJUSTADO: Flores agora aparecem acima da grama */
+.flor {
+  width: 90px;
+  position: absolute;
+  bottom: 130px; /* Subi para brotarem de dentro da grama */
+  z-index: 2; /* Acima do z-index 1 da grama */
+}
+
+.flor1 {
+  left: 100px;
+}
+.flor2 {
+  left: 280px;
+}
+.flor3 {
+  left: 550px;
+}
+.flor4 {
+  left: 760px;
+}
+
+.abelhavoando {
+  width: 120px;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  z-index: 10;
+  animation: voar 8s infinite ease-in-out;
+}
+
+@keyframes voar {
+  0% {
+    left: 0;
+    top: 180px;
+  }
+  25% {
+    left: 250px;
+    top: 100px;
+  }
+  50% {
+    left: 550px;
+    top: 220px;
+  }
+  75% {
+    left: 850px;
+    top: 120px;
+  }
+  100% {
+    left: 0;
+    top: 180px;
+  }
+}
