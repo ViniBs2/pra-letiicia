@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background: linear-gradient(to bottom, #101820, #1d3557, #243b55); */
+}
+
+img {
+  width: 500px;
+
+  max-width: 90%;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
